@@ -3,7 +3,10 @@ from . import views
 
 urlpatterns = [
     path("", views.index),
-    path("sumar/", views.sumar),
+    path("sumar/<int:num1>+<int:num2>", views.sumar),
+    path("resta/<int:num1>-<int:num2>", views.restar),
+    path("multi/<int:num1>*<int:num2>", views.multi),
+    path("multi/<int:num1>/<int:num2>", views.dividir),
     path("saludar/nombre=<str:estudiante>", views.saludar),
 ]
 

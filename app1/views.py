@@ -9,21 +9,22 @@ def index(request):
 
 # Utilizando ruta dinámica
 def saludar(request, estudiante):
-    message = f"Bienvenida {estudiante}"
-    return HttpResponse(message)
+    # message = f"Bienvenida {estudiante}"
+    data = [1, 2, 3, 4]
+    return render(request, "saludar.html", {"data": data})
 
 
-def sumar(request):
-    return HttpResponse(f"5 + 10 es igual = {5+10}")
+def sumar(request, num1, num2):
+    return HttpResponse(f"El resultado de la suma es { num1 + num2}")
 
 
-def restar(request):
-    pass
+def restar(request, num1, num2):
+    return HttpResponse(f"El resultado de la resta es {num1 - num2}")
 
 
-def multi(request):
-    pass
+def multi(request, num1, num2):
+    return HttpResponse(f"El resultado de la multiplicaicón es {num1 * num2}")
 
 
-def dividir(request):
-    pass
+def dividir(request, num1, num2):
+    return HttpResponse(f"El resultado de la multiplicaicón es {num1 / num2}")
