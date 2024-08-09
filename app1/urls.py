@@ -9,6 +9,3 @@ urlpatterns = [
     path("multi/<int:num1>/<int:num2>", views.dividir),
     path("saludar/nombre=<str:estudiante>", views.saludar),
 ]
-
-# app1/
-# app1/sumar
