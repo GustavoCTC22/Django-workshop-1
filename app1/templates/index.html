@@ -4,25 +4,18 @@
     <title>About</title>
   </head>
   <body>
-    <h1>Welcome to about page!</h1>
-    <ul>
-      {% for item in my_list %}
-      <li>{{ item }}</li>
-      {% endfor %}
-    </ul>
-    <table>
-      {% for key, value in my_dict.items %}
-      <tr>
-        <td>{{ key }}</td>
-        <td>{{ value }}</td>
-      </tr>
-      {% endfor %}
-    </table>
+    <h1>Welcome to Postify!</h1>
+    <h2>{{program | upper}}</h2>
+    <p>{{ posts|length }} posts available.</p>
 
-    {% if welcome_text %}
-    <h2>Hello, Welcome 🥷</h2>
-    {% else %}
-    <h2>Sorry, No Welcome 🙅</h2>
+    {% for post in posts %}
+    <h3>{{post.title}}</h3>
+    <p>{{post.content}}</p>
+    <p><span>{{post.author}}</span> - <span> {{post.date}}</span></p>
+    {%if post.likes > 0 %}
+    <span>{{post.likes}} Likes</span>
     {% endif %}
+    <em>Post Data</em>
+    {% endfor %}
   </body>
 </html>

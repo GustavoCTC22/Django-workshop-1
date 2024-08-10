@@ -7,12 +7,34 @@ from django.http import HttpResponse
 # Create your views here.
 def index(request):
     """Aquí se implementará la lógica para la vista inicial"""
+    posts = [
+        {
+            "id": 1,
+            "title": "Understanding Python Dictionaries",
+            "content": "Dictionaries are powerful data structures in Python...",
+            "author": "John Doe",
+            "date": "2024-08-09",
+            "likes": 0,
+        },
+        {
+            "id": 2,
+            "title": "Why Learn Python?",
+            "content": "Python is a versatile language that can be used for web development...",
+            "author": "Jane Smith",
+            "date": "2024-08-08",
+            "likes": 3,
+        },
+        {
+            "id": 3,
+            "title": "Advanced Python Techniques",
+            "content": "Explore the more advanced features of Python, including generators...",
+            "author": "Alice Johnson",
+            "date": "2024-08-07",
+            "likes": 20,
+        },
+    ]
 
-    my_list = ["item1", "item2", "item3"]
-    my_dict = {"key1": "value1", "key2": "value2", "key3": "value3"}
-    welcome_text = True  # 👈 replace True with False and check welcome text
-    context = {"my_list": my_list, "my_dict": my_dict, "welcome_text": welcome_text}
-    return render(request, "index.html", context)
+    return render(request, "index.html", {"posts": posts, "program": "crack the code"})
 
 
 # Utilizando ruta dinámica
