@@ -37,6 +37,10 @@ def index(request):
     return render(request, "index.html", {"posts": posts, "program": "crack the code"})
 
 
+def about_us(request):
+    return render(request, "about_us.html")
+
+
 # Utilizando ruta dinámica
 def saludar(request, estudiante):
     message = f"Bienvenida {estudiante}"

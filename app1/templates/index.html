@@ -4,6 +4,17 @@
     <title>About</title>
   </head>
   <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </nav>
+    <header>
+    {% block "content" %}
+    <main>
     <h1>Welcome to Postify!</h1>
     <h2>{{program | upper}}</h2>
     <p>{{ posts|length }} posts available.</p>
@@ -17,5 +28,15 @@
     {% endif %}
     <em>Post Data</em>
     {% endfor %}
+    </main>
+    {% endblock "content" %}
+    <footer>
+      <ul>
+        <li>Paola</li>
+        <li>Jezabel</li>
+        <li>Wendy</li>
+      </ul>
+      <a href="#">Preguntas frecuentes</a>
+    </footer>
   </body>
 </html>
